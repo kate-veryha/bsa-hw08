@@ -7,6 +7,7 @@ import { ClockComponent } from './clock.component';
 import { TimerComponent } from './timer.component';
 import { StopwatchComponent } from './stopwatch.component';
 import {StopwatchService} from './stopwatch.service';
+import { MenuComponent } from './menu.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {StopwatchService} from './stopwatch.service';
     ClockComponent,
     TimerComponent,
     StopwatchComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,10 +5,10 @@ import { StopwatchService} from './stopwatch.service';
   selector: 'app-stopwatch',
   template: `
     <div class="container">
-      <h1>{{ formatTime(time) }}</h1>
-      <h1 *ngIf="stopwatchService.laps.length > 1">
+      <p>{{ formatTime(time) }}</p>
+      <p *ngIf="stopwatchService.laps.length > 1">
         {{ formatTime(time - stopwatchService.laps[stopwatchService.laps.length - 1].startMs)}}
-      </h1>
+      </p>
       <div class="btn-group">
         <button (click)="toggle()">
           <span *ngIf="!isActive">Start</span>
