@@ -12,12 +12,12 @@ import { Component, OnInit } from '@angular/core';
            type="number"
            [(ngModel)]="minutesSet"
            [disabled]="isActive"
-           (change)="setTimer()"
+           (change)="set()"
            min="0"
            max="1439">
-    <button type="button" (click)="startTimer()">Start</button>
-    <button type="button" (click)="pauseTimer()">Pause</button>
-    <button type="button" (click)="resetTimer()">Reset</button>
+    <button type="button" (click)="start()">Start</button>
+    <button type="button" (click)="pause()">Pause</button>
+    <button type="button" (click)="reset()">Reset</button>
   `,
 })
 export class TimerComponent implements OnInit {
@@ -40,12 +40,11 @@ export class TimerComponent implements OnInit {
     setTimeout(() => this.updateTimer(), 1000);
   }
 
-  setTimer(): void {
+  set(): void {
     this.time.setMinutes(this.minutesSet);
-    console.log(this.time);
   }
 
-  startTimer(): void {
+  start(): void {
     if (this.minutesSet > 0) {
       this.isActive = true;
       this.updateTimer();
@@ -55,11 +54,11 @@ export class TimerComponent implements OnInit {
 
   }
 
-  pauseTimer(): void {
+  pause(): void {
     this.isActive = false;
   }
 
-  resetTimer(): void {
+  reset(): void {
     this.isActive = false;
     this.time = new Date(2000, 1, 1, 0, 0, 0);
   }
